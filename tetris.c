@@ -10,19 +10,16 @@ typedef struct {
     int id;
 } Peca;
 
-// Estrutura da Fila Circular (Entrada de Peças)
 typedef struct {
     Peca itens[TAM_FILA];
     int frente, fim, total;
 } FilaCircular;
 
-// Estrutura da Pilha Linear (Reserva)
 typedef struct {
     Peca itens[TAM_PILHA];
     int topo;
 } PilhaReserva;
 
-// --- FUNÇÕES DE APOIO ---
 Peca gerarPeca() {
     static int proximoId = 100;
     char tipos[] = {'I', 'O', 'T', 'L'};
@@ -59,7 +56,6 @@ Peca pop(PilhaReserva *p) {
     return p->itens[(p->topo)--];
 }
 
-// --- INTERFACE ---
 void exibirEstado(FilaCircular *f, PilhaReserva *p) {
     printf("\n========================================");
     printf("\nFila: [ ");
